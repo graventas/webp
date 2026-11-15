@@ -1,0 +1,162 @@
+/* ========================================================
+   JONATHAN PERSONAL BRANDING - CYBER & AI STYLESHEET
+   Telkom University - S1 Teknologi Informasi
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --cyber-primary: #00f2fe;
+  --cyber-secondary: #4facfe;
+  --ai-primary: #a855f7;
+  --ai-secondary: #c084fc;
+  --bg-dark: #050811;
+  --card-dark: rgba(15, 23, 42, 0.7);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050811;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+/* Cyber Grid Pattern Background */
+.bg-cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Typing cursor animation */
+.typing-cursor {
+  display: inline-block;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Scanline bar animation across image */
+.scanline-bar {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(34, 211, 238, 0.25) 50%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: scanlineMove 3s linear infinite;
+}
+
+@keyframes scanlineMove {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+
+/* Card 3D tilt effects */
+.perspective {
+  perspective: 1000px;
+}
+
+#profileCard {
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+/* Slow rotation for decorative HUD circles */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverseSlow {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spinReverseSlow 25s linear infinite;
+}
+
+/* Interactive Glowing Button */
+.cyber-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: rotate(30deg);
+  animation: cyberShine 6s infinite;
+}
+
+@keyframes cyberShine {
+  0% { transform: translate(-100%, -100%) rotate(30deg); }
+  20%, 100% { transform: translate(100%, 100%) rotate(30deg); }
+}
+
+/* Terminal Styling */
+#terminalOutput {
+  scrollbar-width: thin;
+  scrollbar-color: #06b6d4 #050811;
+}
+
+#terminalOutput::-webkit-scrollbar {
+  width: 6px;
+}
+
+#terminalOutput::-webkit-scrollbar-thumb {
+  background: #0891b2;
+  border-radius: 4px;
+}
+
+/* Active navigation highlight */
+.nav-link.active {
+  color: #22d3ee;
+  background-color: rgba(6, 182, 212, 0.1);
+  border-bottom: 2px solid #06b6d4;
+}
+
+/* Skill category active button */
+.skill-tab.active {
+  background-color: rgba(6, 182, 212, 0.25) !important;
+  color: #67e8f9 !important;
+  border-color: #06b6d4 !important;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.25);
+}
+
+/* Smooth selection */
+::selection {
+  background: #06b6d4;
+  color: #030712;
+}
